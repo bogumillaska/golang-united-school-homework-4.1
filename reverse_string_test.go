@@ -9,3 +9,11 @@ func TestReverseString(t *testing.T) {
 		t.Errorf("got %v, wanted %v", got, want)
 	}
 }
+
+func TestReverseString_cyrilic(t *testing.T) {
+	got := ReverseString("Привет")
+	want := "тевирП"
+	if got != want {
+		t.Errorf("got %v, wanted %v", got, want)
+	}
+}

@@ -1,12 +1,11 @@
 package reverse_string
 
 func ReverseString(input string) (output string) {
-	bytes := []byte(input)
-
-	var reversedBytes []byte
-	for k, _ := range bytes {
-		reversedBytes = append(reversedBytes, bytes[len(bytes)-1-k])
+	runes := []rune(input)
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
 	}
-	output = string(reversedBytes)
+
+	output = string(runes)
 	return output
 }
